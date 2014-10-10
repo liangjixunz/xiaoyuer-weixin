@@ -22,14 +22,15 @@ exports.event_reply = function(message,callback){
         }
             break;
         case "subscribe": {
+             console.log(message);
             callback(weixin.sub_proce(message.FromUserName,message.Ticket?message.Ticket:""));
         }
             break;
-        case "unsubscribe":{
+        /*case "unsubscribe":{
             weixin.unsbscribe(message.FromUserName,function(){
                 ;
             })
-        }
+        }      */
     }
 }
 
