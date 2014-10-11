@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var fs = require("fs") ;
 var wechat = require('wechat');
 var routes = require('./routes');
+var crypto = require("crypto");
 
 var app = express();
 app.use(favicon());
@@ -46,10 +47,24 @@ app.get("/reply/set/delete",routes.reply.delete);
 app.post("/reply/set/edit",routes.reply.edit);
 app.post("/reply/set/sub",routes.reply.edit_sub);
 
-app.get("/api/qr",routes.api.qr);
-app.post("/api/order/new",routes.api.neworder);
-app.post("/api/order/generate",routes.api.orderSuccess);
-app.post("/api/order/ensure",routes.api.ensure);
+app.get("/api/qr",signature_check,routes.api.qr);
+app.post("/api/order/new",signature_check,routes.api.neworder);
+app.post("/api/order/generate",signature_check,routes.api.orderSuccess);
+app.post("/api/order/ensure",signature_check,routes.api.ensure);
 
 
+function signature_check(req,res,next){
+    var sha1 = crypto.createHash('sha1')
+    if(req.query.timestamp&req.query.check){
+        sha1.update("xye");
+        sha1.update(req.query.timestamp);
+        if(req.query.check==sha1.digest('hex')){
+            next();
+        }
+        else
+            res.send(JSON.stringify({code:"-10","err":"permission denied"}))
+    }
+    else
+        res.send(JSON.stringify({code:"-10","err":"permission denied"}))
+}
 module.exports = app;
