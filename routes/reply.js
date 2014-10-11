@@ -23,14 +23,19 @@ exports.event_reply = function(message,callback){
             break;
         case "subscribe": {
              console.log(message);
-            callback(weixin.sub_proce(message.FromUserName,message.Ticket?message.Ticket:""));
+             weixin.sub_proce(message.FromUserName,message.Ticket?message.Ticket:"",callback);
         }
             break;
-        /*case "unsubscribe":{
-            weixin.unsbscribe(message.FromUserName,function(){
-                ;
+        case "unsubscribe":{
+            weixin.unsbscribe(message.FromUserName,function(code){
+                callback("success!");
             })
-        }      */
+        }
+            break;
+        case "SCAN": {
+            console.log(message);
+            weixin.sub_proce(message.FromUserName,message.Ticket?message.Ticket:"",callback);
+        }
     }
 }
 

@@ -5,7 +5,6 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var fs = require("fs") ;
 var wechat = require('wechat');
 var routes = require('./routes');
 var crypto = require("crypto");
@@ -47,10 +46,13 @@ app.get("/reply/set/delete",routes.reply.delete);
 app.post("/reply/set/edit",routes.reply.edit);
 app.post("/reply/set/sub",routes.reply.edit_sub);
 
-app.get("/api/qr",signature_check,routes.api.qr);
-app.post("/api/order/new",signature_check,routes.api.neworder);
-app.post("/api/order/generate",signature_check,routes.api.orderSuccess);
-app.post("/api/order/ensure",signature_check,routes.api.ensure);
+/*
+*提供的apis
+ */
+app.get("/qr",signature_check,routes.api.qr);
+app.post("/order/new",signature_check,routes.api.neworder);
+app.post("/order/generate",signature_check,routes.api.orderSuccess);
+app.post("/order/ensure",signature_check,routes.api.ensure);
 
 
 function signature_check(req,res,next){

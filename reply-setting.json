@@ -1,1 +1,39 @@
-{"subscribe":{"type":"news","content":{"picurl":" /images/1.jpg","text":"简直受不了这个bug，嘤嘤嘤","url":"index.html"}},"auto_reply":[{"type":"text","content":"欢迎关注小鱼儿","keyword":"哈哈哈","id":1},{"type":"text","content":"打豆豆","keyword":"吃饭","id":1412832294404},{"type":"news","content":{"picurl":"sdf","text":"dsafgf","url":"ggggf"},"keyword":"aa","id":1412946350309},{"type":"news","content":{"picurl":"sss","text":"弟弟顶顶顶顶顶顶顶顶顶顶v","url":"dd"},"keyword":"aaaaaa","id":1412947328657},{"type":"news","content":{"picurl":"aaa","text":"大神大神","url":"dsd"},"keyword":"摸","id":1412947506528}]}
+{   "unbound":{
+    "type":"news","content":{"picurl":"http://ber.chinacloudapp.cn/images/1.jpg","text":"请您先绑定您的账号~~","url":"http://ber.chinacloudapp.cn/user/tologin.html"
+} ,
+    "subscribe":{"type":"news","content":{"picurl":"http://ber.chinacloudapp.cn/images/1.jpg","text":"简直受不了这个bug，嘤嘤嘤","url":""}},"auto_reply":[
+    {
+        "type": "text",
+        "content": "欢迎关注小鱼儿",
+        "keyword": "哈哈哈",
+        "id": 1
+    },
+    {
+        "type": "text",
+        "content": "打豆豆",
+        "keyword": "吃饭",
+        "id": 1412832294404
+    },
+    {
+        "type": "news",
+        "content": {
+            "picurl": "http://ber.chinacloudapp.cn/images/1.jpg",
+            "text": "大声点来看哈JKL\nD爱莎克里斯",
+            "url": "http://ber.chinacloudapp.cn/images/1.jpg"
+        },
+        "keyword": "aa",
+        "id": 1412946350309
+    },
+    {
+        "type": "text",
+        "content": "啦啦啦德玛西亚\n啦啦啦撸啊撸啊",
+        "keyword": "b",
+        "id": 1412987296482
+    },
+    {
+        "type": "text",
+        "content": "V领开始考虑\n付了款分红\n但是\ndasj\n打雷时肯定会将阿克苏",
+        "keyword": "c",
+        "id": 1412987599585
+    }
+]}
