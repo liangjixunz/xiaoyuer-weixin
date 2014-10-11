@@ -1,6 +1,6 @@
 {   "unbound":{
     "type":"news","content":{"picurl":"http://ber.chinacloudapp.cn/images/1.jpg","text":"请您先绑定您的账号~~","url":"http://ber.chinacloudapp.cn/user/tologin.html"
-} ,
+}} ,
     "subscribe":{"type":"news","content":{"picurl":"http://ber.chinacloudapp.cn/images/1.jpg","text":"简直受不了这个bug，嘤嘤嘤","url":""}},"auto_reply":[
     {
         "type": "text",
