@@ -54,11 +54,11 @@ app.post("/reply/set/sub",routes.reply.edit_sub);
  *使用api时的校验
  */
 var signature_check = (function(){
-    var token = JSON.parse(fs.readdirSync(__dirname+"/../../shared/appConfig")).token;
+    var token = JSON.parse(fs.readdirSync("./appConfig.json")).token;
     var sha1 = crypto.createHash('sha1')
     return function(req,res,next){
         if(req.query.timestamp&req.query.check){
-            sha1.update("xye");
+            sha1.update(token);
             sha1.update(req.query.timestamp);
             if(req.query.check==sha1.digest('hex')){
                 next();
