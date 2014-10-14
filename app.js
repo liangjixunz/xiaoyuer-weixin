@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var wechat = require('wechat');
 var routes = require('./routes');
 var crypto = require("crypto");
+var fs = require("fs");
 
 var app = express();
 app.use(favicon());
@@ -54,7 +55,7 @@ app.post("/reply/set/sub",routes.reply.edit_sub);
  *使用api时的校验
  */
 var signature_check = (function(){
-    var token = JSON.parse(fs.readdirSync("./appConfig.json")).token;
+    var token = JSON.parse(fs.readFileSync(__dirname+"/appConfig.json")).token;
     var sha1 = crypto.createHash('sha1')
     return function(req,res,next){
         if(req.query.timestamp&req.query.check){
@@ -70,6 +71,9 @@ var signature_check = (function(){
             res.send(JSON.stringify({code:"-10","err":"permission denied"}))
     }
 })();
+
+
+
 /*
  *提供的apis
  */
