@@ -62,12 +62,12 @@ var signature_check = (function(){
         if(req.query.timestamp&&req.query.check){
             sha1.update(req.query.timestamp);
             if(req.query.check==sha1.digest('hex')){
-                sha1 = crypto.createHash('sha1')
-                sha1.update(token);
                 next();
             }
             else
                 res.send(JSON.stringify({code:"-10","err":"permission denied"}))
+            sha1 = crypto.createHash('sha1')
+            sha1.update(token);
         }
         else
             res.send(JSON.stringify({code:"-10","err":"permission denied"}))
