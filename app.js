@@ -57,11 +57,13 @@ app.post("/reply/set/sub",routes.reply.edit_sub);
 var signature_check = (function(){
     var token = JSON.parse(fs.readFileSync(__dirname+"/appConfig.json")).token;
     var sha1 = crypto.createHash('sha1')
+    sha1.update(token);
     return function(req,res,next){
-        if(req.query.timestamp&req.query.check){
-            sha1.update(token);
+        if(req.query.timestamp&&req.query.check){
             sha1.update(req.query.timestamp);
             if(req.query.check==sha1.digest('hex')){
+                sha1 = crypto.createHash('sha1')
+                sha1.update(token);
                 next();
             }
             else
