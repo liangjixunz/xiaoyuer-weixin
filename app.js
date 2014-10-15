@@ -27,7 +27,8 @@ app.use('/wechat', wechat('weixin').text(function (message, req, res, next) {
 }).image(function (message, req, res, next) {
     // TODO
 }).voice(function (message, req, res, next) {
-    // TODO
+    //debug用
+    res.reply(message.FromUserName);
 }).video(function (message, req, res, next) {
     // TODO
 }).location(function (message, req, res, next) {

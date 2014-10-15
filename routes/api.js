@@ -28,8 +28,8 @@ exports.qr = function(req,res){
 *     }
  */
 exports.orderSuccess = function(req,res){
-   var  content = req.body;
-    apis.orderSuccess(content.openid,content.orderID,serviceName,remark,function(result){
+   var  content = req.body;;
+    apis.orderSuccess(content.openid,content.orderID,content.serviceName,content.remark,function(result){
         res.send(result);
     })
 }
@@ -48,7 +48,7 @@ exports.orderSuccess = function(req,res){
  */
 exports.neworder = function(req,res){
     var  content = req.body;
-    apis.neworder(content.openid,content.customInfo,serviceName,remark,function(result){
+    apis.neworder(content.openid,content.orderType,content.customInfo,content.serviceName,content.remark,function(result){
         res.send(result);
     })
 }
