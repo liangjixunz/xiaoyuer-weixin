@@ -84,7 +84,7 @@ app.get("/qr",signature_check,routes.api.qr);
 app.post("/order/new",signature_check,routes.api.neworder);
 app.post("/order/generate",signature_check,routes.api.orderSuccess);
 app.post("/order/ensure",signature_check,routes.api.ensure);
-
+app.post("/pay/new",signature_check,routes.api.pay);
 
 
 module.exports = app;

@@ -29,7 +29,7 @@ exports.qr = function(req,res){
  */
 exports.orderSuccess = function(req,res){
    var  content = req.body;;
-    apis.orderSuccess(content.openid,content.orderID,content.serviceName,content.remark,function(result){
+    apis.orderSuccess(content.openid,content.type,content.orderID,content.serviceName,content.remark,function(result){
         res.send(result);
     })
 }
@@ -48,7 +48,7 @@ exports.orderSuccess = function(req,res){
  */
 exports.neworder = function(req,res){
     var  content = req.body;
-    apis.neworder(content.openid,content.orderType,content.customInfo,content.serviceName,content.remark,function(result){
+    apis.neworder(content.openid,content.type,content.orderType,content.orderID,content.customInfo,content.serviceName,content.remark,function(result){
         res.send(result);
     })
 }
@@ -85,7 +85,7 @@ exports.pay = function(req,res){
  */
 exports.ensure = function(req,res){
     var content = req.body;
-    apis.ensure(content.openid,content.orderID,content.remark,function(result){
+    apis.ensure(content.openid,content.orderID,content.type,content.remark,function(result){
         res.send(result);
     })
 }
