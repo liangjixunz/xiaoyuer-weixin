@@ -86,5 +86,8 @@ app.post("/order/generate",signature_check,routes.api.orderSuccess);
 app.post("/order/ensure",signature_check,routes.api.ensure);
 app.post("/pay/new",signature_check,routes.api.pay);
 
+process.on('uncaughtException', function (err) {
+    console.log('Caught Exception:' + err);//直接捕获method()未定义函数，Node进程未被退出。
+});
 
 module.exports = app;

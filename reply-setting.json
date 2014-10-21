@@ -1,5 +1,5 @@
 {   "unbound":{
-    "type":"news","content":{"picurl":"http://ber.chinacloudapp.cn/images/1.jpg","text":"请您先绑定您的账号~~","url":"http://ber.chinacloudapp.cn/user/tologin.html"
+    "type":"news","content":{"picurl":"http://ber.chinacloudapp.cn/images/1.jpg","text":"请您先绑定您的账号~~","url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxfd339e5a03048eb3&redirect_uri=http://ber.chinacloudapp.cn/web/user/fromwe&response_type=code&scope=snsapi_base&state=1#wechat_redirect"
 }} ,
     "subscribe":{"type":"news","content":{"picurl":"http://ber.chinacloudapp.cn/images/1.jpg","text":"简直受不了这个bug，嘤嘤嘤","url":""}},"auto_reply":[
     {
