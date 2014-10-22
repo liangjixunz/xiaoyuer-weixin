@@ -25,7 +25,7 @@ app.use(express.query());
 app.use('/wechat', wechat('weixin').text(function (message, req, res, next) {
          res.reply(routes.reply.auto_reply(message.Content));
 }).image(function (message, req, res, next) {
-    // TODO
+
 }).voice(function (message, req, res, next) {
     //debug用
     res.reply(message.FromUserName);
@@ -36,6 +36,7 @@ app.use('/wechat', wechat('weixin').text(function (message, req, res, next) {
 }).link(function (message, req, res, next) {
     // TODO
 }).event(function (message, req, res, next) {
+    console.log(message);
     routes.reply.event_reply(message,function(result){
        res.reply(result);
     })

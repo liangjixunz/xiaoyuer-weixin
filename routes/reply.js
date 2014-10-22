@@ -36,6 +36,14 @@ exports.event_reply = function(message,callback){
             console.log(message);
             weixin.sub_proce(message.FromUserName,message.Ticket?message.Ticket:"",callback);
         }
+            break;
+        case "VIEW":{
+            callback("");
+        }
+            break;
+        default: {
+            callback("");
+        }
     }
 }
 
