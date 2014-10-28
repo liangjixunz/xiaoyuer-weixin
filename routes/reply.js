@@ -28,7 +28,7 @@ exports.event_reply = function(message,callback){
             break;
         case "unsubscribe":{
             weixin.unsbscribe(message.FromUserName,function(code){
-                callback("success!");
+                callback("");
             })
         }
             break;
